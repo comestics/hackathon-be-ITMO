@@ -67,12 +67,15 @@ const SideBar = () => {
 
       <aside
         id='default-sidebar'
-        className='fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0'
+        className='fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0  border-solid border-r-[1px] border-r-gray-100 text-gray-gray80'
         aria-label='Sidebar'
       >
         <div className='h-full py-5 overflow-y-auto bg-white '>
           <div className='flex items-center justify-start cursor-pointer px-7 '>
             <Image src='/logo.svg' alt='' width={160} height={60}></Image>
+          </div>
+          <div className='p-[3px] border border-solid rounded-full border-1 border-gray-100 w-fit absolute right-0 translate-x-1/2 bg-white hover:bg-gray-gray4 cursor-pointer'>
+            <Image src='/arrow-left.svg' alt='' width={25} height={25}></Image>
           </div>
           <ul className='px-5 mt-6 space-y-2 font-medium'>
             {linkSideBar.map((itemLink, index) => (
@@ -80,7 +83,7 @@ const SideBar = () => {
                 <a href='#' className='flex items-center text-gray-900 rounded-lg '>
                   <Image src={itemLink.icon} alt='' width={25} height={25}></Image>
 
-                  <span className='ml-3'>{itemLink.title}</span>
+                  <span className='ml-3 text-base text-gray-gray80'>{itemLink.title}</span>
                 </a>
               </li>
             ))}
