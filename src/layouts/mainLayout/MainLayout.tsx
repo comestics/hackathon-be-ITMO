@@ -1,12 +1,11 @@
-import Footer from '@/components/footer'
-import Header from '@/components/header/Header'
+import Footer from '../components/footer'
+import Header from '../components/header'
+import SideBar from '../components/sidebar'
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
+const MainLayout = ({ children }: { children?: React.ReactNode }) => {
   return (
     <>
-      <Header></Header>
-      {children}
-      <Footer></Footer>
+      <SideBar></SideBar>
     </>
   )
 }
