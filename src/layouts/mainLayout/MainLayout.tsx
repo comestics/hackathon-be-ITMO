@@ -11,7 +11,7 @@ const MainLayout = (props: Props) => {
   return (
     <div className='flex'>
       <SideBar></SideBar>
-      <div className='w-full pt-5 pl-6 pr-8 sm:ml-64'>
+      <div className='w-full pt-5 pl-6 lg:pr-8 sm:ml-64'>
         <Header heading={heading}></Header>
       </div>
     </div>
