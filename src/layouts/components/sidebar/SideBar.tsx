@@ -1,14 +1,16 @@
+import path from '@/constants/path'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const SideBar = () => {
   const linkSideBar = [
-    { title: 'Главная', link: '/home', icon: '/home.svg' },
-    { title: 'Расписание', link: '/home', icon: '/schedule.svg' },
-    { title: 'Учебный план', link: '/home', icon: '/adviser.svg' },
+    { title: 'Главная', link: '/', icon: '/home.svg' },
+    { title: 'Расписание', link: '/', icon: '/schedule.svg' },
+    { title: 'Учебный план', link: '/', icon: '/adviser.svg' },
     {
       title: 'Запись по выбору',
-      link: '/home',
+      link: '/',
       // children: [
       //   { title: 'Дашборд', link: '/home' },
       //   { title: 'Ментальная помощь', link: '/home' }
@@ -17,7 +19,7 @@ const SideBar = () => {
     },
     {
       title: 'Спорт',
-      link: '/home',
+      link: '/',
       // children: [
       //   { title: 'Дашборд', link: '/home' },
       //   { title: 'Ментальная помощь', link: '/home' }
@@ -26,18 +28,18 @@ const SideBar = () => {
     },
     {
       title: 'Состояние',
-      link: '/home',
+      link: path.state,
       children: [
-        { title: 'Дашборд', link: '/home' },
-        { title: 'Ментальная помощь', link: '/home' }
+        { title: 'Дашборд', link: '/' },
+        { title: 'Ментальная помощь', link: '/' }
       ],
       icon: '/sticker.svg'
     },
-    { title: 'Финансы', link: '/home', icon: '/wallet.svg' },
-    { title: 'Персоналии', link: '/home', icon: '/users.svg' },
-    { title: 'Зачётка', link: '/home', icon: '/notebook.svg' },
-    { title: 'Заявки', link: '/home', icon: '/menu-note.svg' },
-    { title: 'Сервисы', link: '/home', icon: '/services.svg' }
+    { title: 'Финансы', link: '/', icon: '/wallet.svg' },
+    { title: 'Персоналии', link: '/', icon: '/users.svg' },
+    { title: 'Зачётка', link: '/', icon: '/notebook.svg' },
+    { title: 'Заявки', link: '/', icon: '/menu-note.svg' },
+    { title: 'Сервисы', link: '/', icon: '/services.svg' }
   ]
 
   return (
@@ -80,11 +82,11 @@ const SideBar = () => {
           <ul className='px-5 mt-6 space-y-2 font-medium'>
             {linkSideBar.map((itemLink, index) => (
               <li className='p-2 rounded-md hover:bg-gray-gray4' key={index}>
-                <a href='#' className='flex items-center text-gray-900 rounded-lg '>
+                <Link href={itemLink.link} className='flex items-center text-gray-900 rounded-lg '>
                   <Image src={itemLink.icon} alt='' width={25} height={25}></Image>
 
                   <span className='ml-3 text-base text-gray-gray80'>{itemLink.title}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
